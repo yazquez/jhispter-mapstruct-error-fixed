@@ -1,0 +1,23 @@
+entity Person {
+	fullName String
+}
+
+entity Company {
+    fiscalName String required
+}
+
+entity Country {
+    name String
+}
+
+relationship ManyToOne {
+    Person{country(name)} to Country{person(fullName)},
+    Company{country(name)} to Country{company(fiscalName)}
+}
+
+relationship ManyToMany {
+   Person {company(name)} to Company{person(fullName)}
+}
+
+dto all with mapstruct
+service all with serviceImpl

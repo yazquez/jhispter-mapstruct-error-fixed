@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "person",
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "otherEntityField": "name",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "fullName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170123170520",
+    "entityTableName": "person",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

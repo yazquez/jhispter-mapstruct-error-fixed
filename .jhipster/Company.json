@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "person",
+            "otherEntityName": "person",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "company"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "fiscalName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170123170521",
+    "entityTableName": "company",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl"
+}
