@@ -21,4 +21,13 @@ public interface CountryMapper {
     Country countryDTOToCountry(CountryDTO countryDTO);
 
     List<Country> countryDTOsToCountries(List<CountryDTO> countryDTOs);
+
+    default Country countryFromId(Long id) {
+        if (id == null) {
+            return null;
+        }
+        Country country = new Country();
+        country.setId(id);
+        return country;
+    }
 }

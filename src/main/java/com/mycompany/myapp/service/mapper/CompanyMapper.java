@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Mapper for the entity Company and its DTO CompanyDTO.
  */
-@Mapper(componentModel = "spring", uses = {})
+@Mapper(componentModel = "spring", uses = {CountryMapper.class})
 public interface CompanyMapper {
 
     @Mapping(source = "country.id", target = "countryId")
@@ -24,12 +24,4 @@ public interface CompanyMapper {
 
     List<Company> companyDTOsToCompanies(List<CompanyDTO> companyDTOs);
 
-    default Country countryFromId(Long id) {
-        if (id == null) {
-            return null;
-        }
-        Country country = new Country();
-        country.setId(id);
-        return country;
-    }
 }
